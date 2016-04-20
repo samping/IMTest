@@ -9,14 +9,60 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,RCIMUserInfoDataSource {
 
     var window: UIWindow?
 
 
+    func getUserInfoWithUserId(userId: String!, completion: ((RCUserInfo!) -> Void)!) {
+        let userInfo = RCUserInfo()
+        userInfo.userId = userId
+        switch userId{
+            case "huang":
+            userInfo.name = "小波"
+            userInfo.portraitUri = "http://v1.qzone.cc/avatar/201303/18/19/58/51470171816fe315.jpg!200x200.jpg"
+            case "xiaobo":
+            userInfo.name = "小波"
+            userInfo.portraitUri = "http://v1.qzone.cc/avatar/201303/18/19/58/51470171816fe315.jpg!200x200.jpg"
+            case "xiaobo2":
+            userInfo.name = "小波2"
+            userInfo.portraitUri = "http://v1.qzone.cc/avatar/201303/18/19/58/51470171bf2cc086.jpg!200x200.jpg"
+        default :
+            print("nothing")
+        }
+        return completion(userInfo)
+    }
+    
+    func connectServer(completion : ()->Void){
+        
+//        RCIM.sharedRCIM().userInfoDataSource = self
+        
+        //init appkey
+        RCIM.sharedRCIM().initWithAppKey("8w7jv4qb7hpry")
+        RCIM.sharedRCIM().connectWithToken("T9NsIUFoNUs22m4eddlafWm8Tws/8RnHtOD1EM9lb/xdO+HkCMBfmlOPPKDV8dnj5oDyuZ33uBE16qiar1tH7w==", success: { (_) -> Void in
+            print("连接成功")
+            
+            RCIMClient.sharedRCIMClient().currentUserInfo = RCUserInfo(userId: "xiao", name: "xiaobo", portrait: "http://v1.qzone.cc/avatar/201303/18/19/58/51470171816fe315.jpg!200x200.jpg")
+            NSNotificationCenter.defaultCenter().postNotificationName("NotificationIdentifier", object: nil)
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                completion()
+            })
+            
+            }, error: { (_) -> Void in
+                print("连接失败")
+            }) { () -> Void in
+                print("Token 错误去")
+        }
+
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        return true
+        
+        //check Token who is saved
+//        let tokenCache = NSUserDefaults.standardUserDefaults().objectForKey("kDeviceToken") as? String
+        
+               return true
     }
 
     func applicationWillResignActive(application: UIApplication) {

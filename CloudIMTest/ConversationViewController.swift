@@ -8,12 +8,22 @@
 
 import UIKit
 
-class ConversationViewController: UIViewController {
+class ConversationViewController: RCConversationViewController {
 
+    var currentUser :RCUserInfo!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        currentUser =  RCIMClient.sharedRCIMClient().currentUserInfo
+        self.targetId = "huang"
+        self.userName = "ping"
+        
+        self.conversationType = .ConversationType_PRIVATE
+        self.title = self.userName
+        self.setMessageAvatarStyle(.USER_AVATAR_CYCLE)
 
-        // Do any additional setup after loading the view.
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "getUserInfo:", name:"NotificationIdentifier", object: nil)
+               // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +31,16 @@ class ConversationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func getUserInfo(notification:NSNotification){
+        
+        currentUser =  RCIMClient.sharedRCIMClient().currentUserInfo
+        self.targetId = currentUser.userId
+        self.userName = currentUser.name
+        
+        self.conversationType = .ConversationType_PRIVATE
+        self.title = self.userName
+        self.setMessageAvatarStyle(.USER_AVATAR_CYCLE)
+    }
     /*
     // MARK: - Navigation
 
