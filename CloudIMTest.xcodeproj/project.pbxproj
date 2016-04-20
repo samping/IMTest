@@ -12,9 +12,19 @@
 		8468F2241CC5B55600C4124E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8468F2221CC5B55600C4124E /* Main.storyboard */; };
 		8468F2261CC5B55600C4124E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8468F2251CC5B55600C4124E /* Assets.xcassets */; };
 		8468F2291CC5B55600C4124E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8468F2271CC5B55600C4124E /* LaunchScreen.storyboard */; };
+		848278551CC5B9AD00C6015C /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 848278541CC5B9AD00C6015C /* Podfile */; };
+		84EA1E081CC5D59800C94127 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA1E071CC5D59800C94127 /* ConversationViewController.swift */; };
+		84EA1E0A1CC5E10C00C94127 /* ConversationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA1E091CC5E10C00C94127 /* ConversationListViewController.swift */; };
+		84EA1E0D1CC5FAA900C94127 /* Conversation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EA1E0B1CC5FAA900C94127 /* Conversation.storyboard */; };
+		84EA1E0F1CC5FAF600C94127 /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EA1E0E1CC5FAF600C94127 /* Contact.storyboard */; };
+		84EA1E121CC5FB0D00C94127 /* server.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EA1E101CC5FB0D00C94127 /* server.storyboard */; };
+		84EA1E141CC5FB1E00C94127 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EA1E131CC5FB1E00C94127 /* About.storyboard */; };
+		EC25A801E79A7E9588082CCD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24807F18319B32A5572E1C7C /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BEC0CE4E25622D3FA6DFAB3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		24807F18319B32A5572E1C7C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8468F21B1CC5B55600C4124E /* CloudIMTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudIMTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8468F21E1CC5B55600C4124E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8468F2201CC5B55600C4124E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +32,15 @@
 		8468F2251CC5B55600C4124E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8468F2281CC5B55600C4124E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8468F22A1CC5B55600C4124E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		848278541CC5B9AD00C6015C /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		84EA1E041CC5C84C00C94127 /* CloudIMTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CloudIMTest-Bridging-Header.h"; sourceTree = "<group>"; };
+		84EA1E071CC5D59800C94127 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		84EA1E091CC5E10C00C94127 /* ConversationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationListViewController.swift; sourceTree = "<group>"; };
+		84EA1E0C1CC5FAA900C94127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Conversation.storyboard; sourceTree = "<group>"; };
+		84EA1E0E1CC5FAF600C94127 /* Contact.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Contact.storyboard; sourceTree = "<group>"; };
+		84EA1E111CC5FB0D00C94127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/server.storyboard; sourceTree = "<group>"; };
+		84EA1E131CC5FB1E00C94127 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		FCC68E405ACDEF02A743C4A7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +48,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC25A801E79A7E9588082CCD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A8AC8C6FA4CB7849F0D9FE4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24807F18319B32A5572E1C7C /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8468F2121CC5B55600C4124E = {
 			isa = PBXGroup;
 			children = (
+				848278541CC5B9AD00C6015C /* Podfile */,
 				8468F21D1CC5B55600C4124E /* CloudIMTest */,
 				8468F21C1CC5B55600C4124E /* Products */,
+				E5ED222C32D07AA8329AF88A /* Pods */,
+				6A8AC8C6FA4CB7849F0D9FE4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,11 +88,27 @@
 				8468F21E1CC5B55600C4124E /* AppDelegate.swift */,
 				8468F2201CC5B55600C4124E /* ViewController.swift */,
 				8468F2221CC5B55600C4124E /* Main.storyboard */,
+				84EA1E131CC5FB1E00C94127 /* About.storyboard */,
+				84EA1E101CC5FB0D00C94127 /* server.storyboard */,
+				84EA1E0E1CC5FAF600C94127 /* Contact.storyboard */,
+				84EA1E0B1CC5FAA900C94127 /* Conversation.storyboard */,
 				8468F2251CC5B55600C4124E /* Assets.xcassets */,
 				8468F2271CC5B55600C4124E /* LaunchScreen.storyboard */,
 				8468F22A1CC5B55600C4124E /* Info.plist */,
+				84EA1E041CC5C84C00C94127 /* CloudIMTest-Bridging-Header.h */,
+				84EA1E071CC5D59800C94127 /* ConversationViewController.swift */,
+				84EA1E091CC5E10C00C94127 /* ConversationListViewController.swift */,
 			);
 			path = CloudIMTest;
+			sourceTree = "<group>";
+		};
+		E5ED222C32D07AA8329AF88A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0BEC0CE4E25622D3FA6DFAB3 /* Pods.debug.xcconfig */,
+				FCC68E405ACDEF02A743C4A7 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +118,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8468F22D1CC5B55600C4124E /* Build configuration list for PBXNativeTarget "CloudIMTest" */;
 			buildPhases = (
+				A0494A6BC6C17050F21D19CE /* Check Pods Manifest.lock */,
 				8468F2171CC5B55600C4124E /* Sources */,
 				8468F2181CC5B55600C4124E /* Frameworks */,
 				8468F2191CC5B55600C4124E /* Resources */,
+				FD74FC996F9DC3E96DAD5A94 /* Embed Pods Frameworks */,
+				936B2144589A3AAE6AE6A094 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,12 +173,65 @@
 			buildActionMask = 2147483647;
 			files = (
 				8468F2291CC5B55600C4124E /* LaunchScreen.storyboard in Resources */,
+				84EA1E0F1CC5FAF600C94127 /* Contact.storyboard in Resources */,
+				84EA1E141CC5FB1E00C94127 /* About.storyboard in Resources */,
 				8468F2261CC5B55600C4124E /* Assets.xcassets in Resources */,
+				84EA1E0D1CC5FAA900C94127 /* Conversation.storyboard in Resources */,
+				848278551CC5B9AD00C6015C /* Podfile in Resources */,
+				84EA1E121CC5FB0D00C94127 /* server.storyboard in Resources */,
 				8468F2241CC5B55600C4124E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		936B2144589A3AAE6AE6A094 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0494A6BC6C17050F21D19CE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FD74FC996F9DC3E96DAD5A94 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8468F2171CC5B55600C4124E /* Sources */ = {
@@ -136,7 +239,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8468F2211CC5B55600C4124E /* ViewController.swift in Sources */,
+				84EA1E0A1CC5E10C00C94127 /* ConversationListViewController.swift in Sources */,
 				8468F21F1CC5B55600C4124E /* AppDelegate.swift in Sources */,
+				84EA1E081CC5D59800C94127 /* ConversationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +262,22 @@
 				8468F2281CC5B55600C4124E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		84EA1E0B1CC5FAA900C94127 /* Conversation.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84EA1E0C1CC5FAA900C94127 /* Base */,
+			);
+			name = Conversation.storyboard;
+			sourceTree = "<group>";
+		};
+		84EA1E101CC5FB0D00C94127 /* server.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84EA1E111CC5FB0D00C94127 /* Base */,
+			);
+			name = server.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -245,23 +366,30 @@
 		};
 		8468F22E1CC5B55600C4124E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BEC0CE4E25622D3FA6DFAB3 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CloudIMTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sae.CloudIMTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CloudIMTest/CloudIMTest-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		8468F22F1CC5B55600C4124E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCC68E405ACDEF02A743C4A7 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CloudIMTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sae.CloudIMTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CloudIMTest/CloudIMTest-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -284,6 +412,7 @@
 				8468F22F1CC5B55600C4124E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
