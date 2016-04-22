@@ -13,9 +13,18 @@ class ConversationListViewController: RCConversationListViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        refreshInitUI()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loginCompletion:", name: "LoginCompletionNotification", object: nil)
+        // Do any additional setup after loading the view.
+    }
+
+    func loginCompletion(notification:NSNotification){
+        refreshInitUI()
+    }
+    func refreshInitUI(){
         let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
         appDelegate?.connectServer({ () -> Void in
-//            print("连接成功2")
+            //            print("连接成功2")
             self.setDisplayConversationTypes([
                 RCConversationType.ConversationType_APPSERVICE.rawValue,
                 RCConversationType.ConversationType_CHATROOM.rawValue,
@@ -29,9 +38,7 @@ class ConversationListViewController: RCConversationListViewController {
                 ])
             self.refreshConversationTableViewIfNeeded()
         })
-        // Do any additional setup after loading the view.
     }
-
     override func onSelectedTableRow(conversationModelType: RCConversationModelType, conversationModel model: RCConversationModel!, atIndexPath indexPath: NSIndexPath!) {
         let conCV = RCConversationViewController()
         conCV.targetId = model.targetId
@@ -40,6 +47,12 @@ class ConversationListViewController: RCConversationListViewController {
         conCV.title = model.conversationTitle
         self.navigationController?.pushViewController(conCV, animated: true)
         self.tabBarController?.tabBar.hidden = true
+    }
+    
+    
+    @IBAction func refresh(sender: AnyObject) {
+       self.refreshConversationTableViewIfNeeded()
+
     }
     
     override func didReceiveMemoryWarning() {

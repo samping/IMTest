@@ -8,24 +8,37 @@
 
 import UIKit
 
-class ConversationViewController: RCConversationViewController {
+class ConversationViewController: RCConversationViewController ,RCIMReceiveMessageDelegate{
 
     var currentUser :RCUserInfo!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currentUser =  RCIMClient.sharedRCIMClient().currentUserInfo
-        self.targetId = "huang"
-        self.userName = "ping"
-        
-        self.conversationType = .ConversationType_PRIVATE
-        self.title = self.userName
-        self.setMessageAvatarStyle(.USER_AVATAR_CYCLE)
-
+     RCIM.sharedRCIM().receiveMessageDelegate = self
+        refreshUI()
 //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "getUserInfo:", name:"NotificationIdentifier", object: nil)
                // Do any additional setup after loading the view.
     }
 
+    func refreshUI(){
+        let user = AVUser.currentUser()
+        if(user != nil){
+            currentUser =  RCIMClient.sharedRCIMClient().currentUserInfo
+            self.targetId = "d"
+            self.userName = currentUser.name
+            
+            self.conversationType = .ConversationType_PRIVATE
+            self.title = self.userName
+            self.setMessageAvatarStyle(.USER_AVATAR_CYCLE)
+
+        }
+        
+    }
+    
+    func onRCIMReceiveMessage(message: RCMessage!, left: Int32) {
+        print(message)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

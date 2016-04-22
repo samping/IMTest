@@ -37,6 +37,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="最近会话" id="Qlb-0w-Vwy">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="BLV-Yb-XNJ">
+                            <connections>
+                                <action selector="refresh:" destination="lrP-Rs-xdv" id="M1E-Os-Euu"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cuK-ik-5eB">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="show" id="G7q-cV-jO7"/>

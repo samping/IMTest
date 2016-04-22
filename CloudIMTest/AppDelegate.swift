@@ -7,9 +7,12 @@
 //
 
 import UIKit
+//import AVOSCloud
+////如果使用了实时通信模块，请添加下列导入语句到头部：
+//import AVOSCloudIM
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate,RCIMUserInfoDataSource {
+class AppDelegate: UIResponder, UIApplicationDelegate,RCIMUserInfoDataSource,RCIMReceiveMessageDelegate {
 
     var window: UIWindow?
 
@@ -33,26 +36,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate,RCIMUserInfoDataSource {
         return completion(userInfo)
     }
     
+    func onRCIMReceiveMessage(message: RCMessage!, left: Int32) {
+        print(message)
+    }
+    
     func connectServer(completion : ()->Void){
         
 //        RCIM.sharedRCIM().userInfoDataSource = self
         
-        //init appkey
-        RCIM.sharedRCIM().initWithAppKey("8w7jv4qb7hpry")
-        RCIM.sharedRCIM().connectWithToken("T9NsIUFoNUs22m4eddlafWm8Tws/8RnHtOD1EM9lb/xdO+HkCMBfmlOPPKDV8dnj5oDyuZ33uBE16qiar1tH7w==", success: { (_) -> Void in
-            print("连接成功")
+        let user = AVUser.currentUser()
+        if(user != nil){
+            //init appkey
+            RCIM.sharedRCIM().initWithAppKey("8w7jv4qb7hpry")
+            RCIM.sharedRCIM().receiveMessageDelegate = self
+            RCIM.sharedRCIM().connectWithToken("T9NsIUFoNUs22m4eddlafWm8Tws/8RnHtOD1EM9lb/xdO+HkCMBfmlOPPKDV8dnj5oDyuZ33uBE16qiar1tH7w==", success: { (_) -> Void in
+                print("连接成功")
+                print("useId : "+user.mobilePhoneNumber)
+                RCIMClient.sharedRCIMClient().currentUserInfo = RCUserInfo(userId: user.mobilePhoneNumber, name: user.username, portrait: "http://v1.qzone.cc/avatar/201303/18/19/58/51470171816fe315.jpg!200x200.jpg")
+                NSNotificationCenter.defaultCenter().postNotificationName("NotificationIdentifier", object: nil)
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    completion()
+                })
+                
+                }, error: { (_) -> Void in
+                    print("连接失败")
+                }) { () -> Void in
+                    print("Token 错误去")
+            }
+        }else{
             
-            RCIMClient.sharedRCIMClient().currentUserInfo = RCUserInfo(userId: "xiao", name: "xiaobo", portrait: "http://v1.qzone.cc/avatar/201303/18/19/58/51470171816fe315.jpg!200x200.jpg")
-            NSNotificationCenter.defaultCenter().postNotificationName("NotificationIdentifier", object: nil)
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                completion()
-            })
-            
-            }, error: { (_) -> Void in
-                print("连接失败")
-            }) { () -> Void in
-                print("Token 错误去")
         }
+
 
     }
     
@@ -62,7 +76,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate,RCIMUserInfoDataSource {
         //check Token who is saved
 //        let tokenCache = NSUserDefaults.standardUserDefaults().objectForKey("kDeviceToken") as? String
         
-               return true
+        
+        // applicationId 即 App Id，clientKey 是 App Key。
+
+          AVOSCloud.setApplicationId("hwbu7iUtMrrv48nGinaYCDSE-gzGzoHsz", clientKey: "LJz6Bbc8KWcU3PPYx95FlnAh")
+         return true
     }
 
     func applicationWillResignActive(application: UIApplication) {

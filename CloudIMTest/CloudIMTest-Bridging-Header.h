@@ -3,3 +3,4 @@
 //
 
 #import <RongIMKit/RongIMKit.h>
+#import <AVOSCloud/AVOSCloud.h>
